@@ -142,11 +142,12 @@ create table MENSAJE
 create table USUARIO
 (
 	ID INTEGER not null generated always as identity (start with 1, increment by 1),
-	CORREO VARCHAR(50) not null unique,
+	CORREO VARCHAR(50) not null,
 	CONTRASENA VARCHAR(30) not null,
 	NOMBRE VARCHAR(50) not null,
 	ROL INTEGER not null,
-	primary key (ID)
+	primary key (ID),
+	unique (CORREO)
 );
 
 /* 
